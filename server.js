@@ -28,6 +28,10 @@ var app = new express();
 app.use(cors())
 app.use(bodyParser.json());
 
+app.get('', function(req, res) {
+  res.send('ok');
+});
+
 app.get('/chicken', function (req, res) {
   Journal.find(function (err, data) {
     if (err) {
